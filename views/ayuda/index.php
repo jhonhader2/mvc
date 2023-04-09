@@ -5,4 +5,3 @@
 </div>
 
 <?php require 'views/main/partials/footer.php' ?>
-    

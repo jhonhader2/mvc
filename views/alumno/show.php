@@ -2,13 +2,13 @@
 
 <div id="main">
     <h1 class="center">Edición de Alumno</h1>
-    <h2 class="center"><?=$this->alumno->nombres." ".$this->alumno->apellidos ?></h2>
+    <h2 class="center"><?= $this->alumno->nombres . " " . $this->alumno->apellidos ?></h2>
 
     <div class="center">
         <span><?= $this->mensaje ?></span>
     </div>
 
-    <form action="<?php echo constant('URL') ?>consulta/update" method="POST">
+    <form action="<?php echo constant('URL') ?>alumno/update" method="POST">
         <fieldset>
             <legend>Formulario</legend>
             <input type="hidden" name="id" value="<?= $this->alumno->id ?>">

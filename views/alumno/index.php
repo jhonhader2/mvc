@@ -1,7 +1,7 @@
 <?php require 'views/main/partials/header.php' ?>
 
 <div id="main">
-    <h1 class="center">Sección de Consulta</h1>
+    <h1 class="center">Alumnos Inscritos</h1>
 
     <div class="center">
         <span><?= $this->mensaje ?></span>
@@ -24,10 +24,10 @@
                         <td><?= $row->nombres ?></td>
                         <td><?= $row->apellidos ?></td>
                         <td align="center">
-                            <a href="<?= constant('URL') . "consulta/show/" . $row->id ?>">Actualizar</a>
+                            <a href="<?= constant('URL') . "alumno/show/" . $row->id ?>">Actualizar</a>
                         </td>
                         <td align="center">
-                            <a href="<?= constant('URL') . "consulta/destroy/" . $row->id ?>"">Eliminar</a> 
+                            <a href="<?= constant('URL') . "alumno/destroy/" . $row->id ?>"">Eliminar</a> 
                         </td>
                     </tr>
                 <?php
@@ -43,7 +43,7 @@
         </tbody>
     </table>
     <br>
-    <a href="<?= constant('URL') ?>nuevo">Nuevo</a>
+    <a href="<?= constant('URL') ?>alumno/create">Nuevo</a>
 </div>
 
 <?php require 'views/main/partials/footer.php' ?>

@@ -1,6 +1,6 @@
 <?php
 
-class Ayuda extends Controller
+class MainController extends Controller
 {
     public function __construct()
     {
@@ -9,6 +9,6 @@ class Ayuda extends Controller
 
     public function render()
     {
-        $this->view->render('ayuda/index');
+        $this->view->render('main/index');
     }
 }

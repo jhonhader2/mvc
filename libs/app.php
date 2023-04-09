@@ -1,6 +1,6 @@
 <?php
 
-require_once 'controllers/errores.php';
+require_once 'controllers/erroresController.php';
 
 class App
 {
@@ -12,27 +12,32 @@ class App
 
         //Sin definir controller
         if (empty($url[0])) {
-            $arhivoController = 'controllers/main.php';
+            $arhivoController = 'controllers/mainController.php';
             require_once $arhivoController;
-            $controller = new Main();
-            $controller->render();
+            $controller = new MainController();
             $controller->loadModel('main');
+            $controller->render();
+
             return false;
         }
 
-        $arhivoController = 'controllers/' . $url[0] . '.php';
+        $arhivoController = 'controllers/' . $url[0] . 'Controller.php';
 
         if (file_exists($arhivoController)) {
             require_once $arhivoController;
+            $class = $url[0] . 'Controller';
 
-            $controller = new $url[0];
-            $controller->loadModel($url[0]);
+            $controller = new $class;
+            $model      = $url[0];
+
+            // var_dump($model);
+            $controller->loadModel($model);
 
             #elementos de url
             $nparams = sizeof($url);
 
-            if ($nparams > 1) {
-                if ($nparams > 2) {
+            if ($nparams >= 2) {
+                if ($nparams >= 3) {
                     $params = [];
                     for ($i = 2; $i < $nparams; $i++) {
                         array_push($params, $url[$i]);
@@ -42,10 +47,11 @@ class App
                     $controller->{$url[1]}();
                 }
             } else {
-                $controller->render();
+                $controller->index();
             }
         } else {
-            $controller = new Errores();
+            $controller = new ErroresController();
+            $controller->index();
         }
     }
 }

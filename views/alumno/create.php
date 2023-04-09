@@ -7,7 +7,7 @@
         <span><?= $this->mensaje ?></span>
     </div>
 
-    <form action="<?php echo constant('URL') ?>nuevo/registrar" method="POST">
+    <form action="<?php echo constant('URL') ?>alumno/store" method="POST">
         <fieldset>
             <legend>Formulario</legend>
             <label for="nombres">

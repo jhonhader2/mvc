@@ -3,10 +3,10 @@
 class View
 {
     public $mensaje = '';
-    
+
     function __construct()
     {
-        $this->mensaje = null;
+        // $this->mensaje = null;
     }
 
     public function render($nombre)
