@@ -1,26 +1,27 @@
 <?php require 'views/main/partials/header.php' ?>
 
-<div id="main">
-    <h1 class="center">Sección de Nuevo</h1>
+<div id="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="h3 mb-4 text-gray-800">Nuevo Alumno</h1>
 
-    <div class="center">
-        <span><?= $this->mensaje ?></span>
+                <form action="<?php echo constant('URL') ?>alumno/store" method="POST">
+                    <div class="form-group">
+                        <label for="nombres"><span>Nombres</span></label>
+                        <input type="text" class="form-control" name="nombres" id="nombres" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos"><span>Apellidos</span></label>
+                        <input type="text" class="form-control" name="apellidos" id="apellidos" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-sm btn-outline-primary" value="Guardar">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <form action="<?php echo constant('URL') ?>alumno/store" method="POST">
-        <fieldset>
-            <legend>Formulario</legend>
-            <label for="nombres">
-                <span>Nombres</span>
-                <input type="text" name="nombres" id="nombres" required>
-            </label><br><br>
-            <label for="apellidos">
-                <span>Apellidos</span>
-                <input type="text" name="apellidos" id="apellidos" required>
-            </label><br><br>
-            <input type="submit" value="Guardar">
-        </fieldset>
-    </form>
 </div>
 
 <?php require 'views/main/partials/footer.php' ?>

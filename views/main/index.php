@@ -1,12 +1,12 @@
-<?php require_once constant('URL') . 'views/main/partials/header.php'; ?>
+<?php require_once 'views/main/partials/header.php'; ?>
 
-<div id="main">
-    <h1 class="center">Hola, bienvenido al sitio web</h1>
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-    <div class="center">
-        <span><?= $this->mensaje ?></span>
-    </div>
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Bienvenido...</h1>
 
 </div>
+<!-- /.container-fluid -->
 
-<?php require constant('URL') . 'views/main/partials/footer.php' ?>
+<?php require_once 'views/main/partials/footer.php'; ?>

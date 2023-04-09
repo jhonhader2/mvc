@@ -1,14 +1,15 @@
 <?php
-    require_once dirname(__FILE__) . '../../../../config/config.php';
+require_once dirname(__FILE__) . '../../../../config/config.php';
 ?>
 
-</body>
+</div>
+<!-- End of Main Content -->
 
-<footer>
-    <div id="footer">
-        <span>© Hader Rgz - <?= date('2023') ?> </span>
-    </div>
-</footer>
-<script src="<?= constant('URL') ?>public/js/default.js"></script>
+<!-- Footer -->
+<?php require constant('URL') . 'views/main/partials/footer-info.php'; ?>
+<!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
 
-</html>
+</div>
+<!-- End of Page Wrapper -->

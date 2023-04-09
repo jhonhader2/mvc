@@ -1,28 +1,38 @@
 <?php require 'views/main/partials/header.php' ?>
 
-<div id="main">
-    <h1 class="center">Edición de Alumno</h1>
-    <h2 class="center"><?= $this->alumno->nombres . " " . $this->alumno->apellidos ?></h2>
+<div id="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="h3 mb-4 text-gray-800">Nuevo Alumno</h1>
 
-    <div class="center">
-        <span><?= $this->mensaje ?></span>
+                <?php
+                if ($this->mensaje) :
+                ?>
+                    <div class="alert alert-success" role="alert">
+                        <span><?= $this->mensaje ?></span>
+                    </div>
+                <?php
+                endif
+                ?>
+                <form action="<?php echo constant('URL') ?>alumno/update" method="POST">
+
+                    <input type="hidden" name="id" value="<?= $this->alumno->id ?>">
+                    <div class="form-group">
+                        <label for="nombres"><span>Nombres</span></label>
+                        <input type="text" class="form-control" name="nombres" id="nombres" value="<?= $this->alumno->nombres ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos"><span>Apellidos</span></label>
+                        <input type="text" class="form-control" name="apellidos" id="apellidos" value="<?= $this->alumno->apellidos ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-sm btn-outline-info" value="Actualizar">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <form action="<?php echo constant('URL') ?>alumno/update" method="POST">
-        <fieldset>
-            <legend>Formulario</legend>
-            <input type="hidden" name="id" value="<?= $this->alumno->id ?>">
-            <label for="nombres">
-                <span>Nombres</span>
-                <input type="text" name="nombres" id="nombres" value="<?= $this->alumno->nombres ?>" required>
-            </label><br><br>
-            <label for="apellidos">
-                <span>Apellidos</span>
-                <input type="text" name="apellidos" id="apellidos" value="<?= $this->alumno->apellidos ?>" required>
-            </label><br><br>
-            <input type="submit" value="Actualizar">
-        </fieldset>
-    </form>
 </div>
 
 <?php require 'views/main/partials/footer.php' ?>
